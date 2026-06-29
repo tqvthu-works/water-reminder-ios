@@ -1,0 +1,83 @@
+# ====================
+# macOS specific
+# ====================
+.DS_Store
+.localized
+__MACOSX/
+.AppleDouble
+.LSOverride
+Icon
+
+# Resource forks
+._*
+
+# Files and directories that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.apdisk
+
+# ====================
+# Xcode / Swift
+# ====================
+## User settings
+xcuserdata/
+
+## Build generated
+build/
+DerivedData/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+.build/
+# Packages/          # Uncomment nếu bạn không muốn commit source của SPM dependencies
+# Package.resolved
+
+# ====================
+# CocoaPods (nếu dùng)
+# ====================
+# Pods/              # Khuyến nghị KHÔNG ignore nếu bạn commit Pods (thường commit để ổn định)
+
+# ====================
+# Carthage (nếu dùng)
+# ====================
+Carthage/Build/
+
+# ====================
+# fastlane
+# ====================
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ====================
+# Other common ignores
+# ====================
+*.log
+*.swp
+*.tmp
+*.bak
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.rar

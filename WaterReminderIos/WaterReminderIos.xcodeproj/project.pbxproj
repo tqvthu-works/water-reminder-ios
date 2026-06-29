@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2013F8CB4924A73196EE9A5A /* ScheduleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85625E6E68D473ED8AA41540 /* ScheduleEditorView.swift */; };
+		492528F09EE6356A485E75D3 /* WaterHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61982E492895B9F79EE37921 /* WaterHistoryView.swift */; };
+		7A0C8C7568A26DDF177C4986 /* ReminderPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F365BC180BBCA9C00876C1 /* ReminderPopupView.swift */; };
+		90BA1A4DF7E3A1BAA60054DB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDB1D81A725FA93903EB5C /* NotificationService.swift */; };
+		9D92083618796522CFD0A64D /* WaterReminderIosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81647CC5C204F69927DF340C /* WaterReminderIosApp.swift */; };
+		C9CD9EF32FFD5263010EB2C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428091B29FD622347147054 /* Assets.xcassets */; };
+		E4FF0C7A32C5A1DCE7188F92 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A1A1898CD1001A57C63E20 /* HomeView.swift */; };
+		E8483BF5E327CB35BAA74FFB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B84C381768A5964B88203F /* AppState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03B84C381768A5964B88203F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		04DDB1D81A725FA93903EB5C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		52F365BC180BBCA9C00876C1 /* ReminderPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPopupView.swift; sourceTree = "<group>"; };
+		61982E492895B9F79EE37921 /* WaterHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterHistoryView.swift; sourceTree = "<group>"; };
+		662FAD461D5675BC2FC28D81 /* WaterReminderIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterReminderIos.entitlements; sourceTree = "<group>"; };
+		81647CC5C204F69927DF340C /* WaterReminderIosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterReminderIosApp.swift; sourceTree = "<group>"; };
+		8428091B29FD622347147054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85625E6E68D473ED8AA41540 /* ScheduleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEditorView.swift; sourceTree = "<group>"; };
+		B2A1A1898CD1001A57C63E20 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C81F94041E84A83CDAC6E37B /* WaterReminderIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterReminderIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0AAED8145661E73A45D496A9 /* WaterReminderIos */ = {
+			isa = PBXGroup;
+			children = (
+				03B84C381768A5964B88203F /* AppState.swift */,
+				8428091B29FD622347147054 /* Assets.xcassets */,
+				662FAD461D5675BC2FC28D81 /* WaterReminderIos.entitlements */,
+				81647CC5C204F69927DF340C /* WaterReminderIosApp.swift */,
+				ED261732558CFA18D47A2360 /* Services */,
+				3D13D029B479771F9195CC4A /* Views */,
+			);
+			path = WaterReminderIos;
+			sourceTree = "<group>";
+		};
+		0D226DD68E806773CF7B3E20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C81F94041E84A83CDAC6E37B /* WaterReminderIos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32A7F892CC97A14927FAB9C9 = {
+			isa = PBXGroup;
+			children = (
+				0AAED8145661E73A45D496A9 /* WaterReminderIos */,
+				0D226DD68E806773CF7B3E20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D13D029B479771F9195CC4A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2A1A1898CD1001A57C63E20 /* HomeView.swift */,
+				52F365BC180BBCA9C00876C1 /* ReminderPopupView.swift */,
+				85625E6E68D473ED8AA41540 /* ScheduleEditorView.swift */,
+				61982E492895B9F79EE37921 /* WaterHistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED261732558CFA18D47A2360 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04DDB1D81A725FA93903EB5C /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92C1DEA5652ECE291A63FE13 /* WaterReminderIos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7193130E24C2042B91FFBB87 /* Build configuration list for PBXNativeTarget "WaterReminderIos" */;
+			buildPhases = (
+				CC3403B3AA841BC34FDFAF8F /* Sources */,
+				207635528CFF5C48370E0827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterReminderIos;
+			packageProductDependencies = (
+			);
+			productName = WaterReminderIos;
+			productReference = C81F94041E84A83CDAC6E37B /* WaterReminderIos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1C3C5F630781658E073733D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 1CA9D777D776CC5D2C5F44F9 /* Build configuration list for PBXProject "WaterReminderIos" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 32A7F892CC97A14927FAB9C9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0D226DD68E806773CF7B3E20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92C1DEA5652ECE291A63FE13 /* WaterReminderIos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		207635528CFF5C48370E0827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CD9EF32FFD5263010EB2C0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC3403B3AA841BC34FDFAF8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8483BF5E327CB35BAA74FFB /* AppState.swift in Sources */,
+				E4FF0C7A32C5A1DCE7188F92 /* HomeView.swift in Sources */,
+				90BA1A4DF7E3A1BAA60054DB /* NotificationService.swift in Sources */,
+				7A0C8C7568A26DDF177C4986 /* ReminderPopupView.swift in Sources */,
+				2013F8CB4924A73196EE9A5A /* ScheduleEditorView.swift in Sources */,
+				492528F09EE6356A485E75D3 /* WaterHistoryView.swift in Sources */,
+				9D92083618796522CFD0A64D /* WaterReminderIosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		007D2DA2D4CD75415F12B699 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		69D13E6CFC9E1469DCCB388D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V38RPTFL4F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nhắc uống nước";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jw.waterreminderios;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86C7794B7512A128146B1730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		BC2139F84897DFF227F3A958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V38RPTFL4F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nhắc uống nước";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jw.waterreminderios;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CA9D777D776CC5D2C5F44F9 /* Build configuration list for PBXProject "WaterReminderIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007D2DA2D4CD75415F12B699 /* Debug */,
+				86C7794B7512A128146B1730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7193130E24C2042B91FFBB87 /* Build configuration list for PBXNativeTarget "WaterReminderIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC2139F84897DFF227F3A958 /* Debug */,
+				69D13E6CFC9E1469DCCB388D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1C3C5F630781658E073733D /* Project object */;
+}
