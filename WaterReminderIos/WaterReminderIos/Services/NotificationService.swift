@@ -1,17 +1,21 @@
 import Foundation
 import UserNotifications
 
-final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
+final class NotificationService {
 
     static let shared = NotificationService()
 
-    private override init() {
-        super.init()
-        UNUserNotificationCenter.current().delegate = self
-    }
+    private init() {}
 
     func requestPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("[NotificationService] Permission error: \(error.localizedDescription)")
+            }
+            if !granted {
+                print("[NotificationService] Permission denied by user")
+            }
+        }
     }
 
     func cancelAll() {
@@ -20,9 +24,10 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
 
     func scheduleAllNotifications(from schedule: [ScheduleSlot]) {
         let center = UNUserNotificationCenter.current()
-        center.removePendingNotificationRequests(withIdentifiers: schedule.map { $0.id.uuidString })
+        center.removeAllPendingNotificationRequests()
 
         let enabledSlots = schedule.filter { $0.isEnabled }
+        print("[NotificationService] Scheduling \(enabledSlots.count) notifications")
 
         for slot in enabledSlots {
             let content = UNMutableNotificationContent()
@@ -38,7 +43,13 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             let request = UNNotificationRequest(identifier: slot.id.uuidString, content: content, trigger: trigger)
 
-            center.add(request)
+            center.add(request) { error in
+                if let error = error {
+                    print("[NotificationService] Failed to schedule \(slot.timeString): \(error.localizedDescription)")
+                } else {
+                    print("[NotificationService] Scheduled \(slot.timeString): \(slot.label)")
+                }
+            }
         }
     }
 
@@ -51,20 +62,11 @@ final class NotificationService: NSObject, UNUserNotificationCenterDelegate {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(minutes * 60), repeats: false)
         let request = UNNotificationRequest(identifier: "snooze", content: content, trigger: trigger)
 
-        UNUserNotificationCenter.current().add(request)
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.banner, .sound, .list])
-    }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        NotificationCenter.default.post(name: .reminderNotificationTapped, object: nil)
-        completionHandler()
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("[NotificationService] Failed to schedule snooze: \(error.localizedDescription)")
+            }
+        }
     }
 }
 

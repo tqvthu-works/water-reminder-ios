@@ -54,7 +54,9 @@ final class AppState: ObservableObject {
     @Published var showReminderPopup: Bool = false
 
     private var snoozeTimer: Timer?
+    private var foregroundTimer: Timer?
     private var lastResetDay: Int
+    private var lastFiredSlotIds: Set<UUID> = []
 
     private enum Keys {
         static let schedule = "schedule_v1"
@@ -86,6 +88,13 @@ final class AppState: ObservableObject {
         NotificationService.shared.requestPermission()
         NotificationService.shared.scheduleAllNotifications(from: schedule)
         calculateNextReminder()
+        startForegroundTimer()
+
+        let enabledSlots = schedule.filter { $0.isEnabled }
+        print("[AppState] Init complete - \(enabledSlots.count) enabled slots")
+        for slot in enabledSlots {
+            print("[AppState]   - \(slot.timeString): \(slot.label) (\(slot.ml)ml)")
+        }
     }
 
     func checkMissedAndNotify() {
@@ -153,6 +162,8 @@ final class AppState: ObservableObject {
         isPaused = true
         snoozeTimer?.invalidate()
         snoozeTimer = nil
+        foregroundTimer?.invalidate()
+        foregroundTimer = nil
         nextReminderDate = nil
         NotificationService.shared.cancelAll()
     }
@@ -161,10 +172,48 @@ final class AppState: ObservableObject {
         isPaused = false
         NotificationService.shared.scheduleAllNotifications(from: schedule)
         calculateNextReminder()
+        startForegroundTimer()
     }
 
     func togglePause() {
         if isPaused { resumeTimer() } else { pauseTimer() }
+    }
+
+    private func startForegroundTimer() {
+        foregroundTimer?.invalidate()
+        guard !isPaused else {
+            print("[AppState] Foreground timer not started - isPaused = true")
+            return
+        }
+        print("[AppState] Starting foreground timer (checks every 30s)")
+        foregroundTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { [weak self] _ in
+            self?.checkForegroundReminder()
+        }
+    }
+
+    private func checkForegroundReminder() {
+        guard !isPaused, !showReminderPopup else { return }
+
+        resetCupsIfNewDay()
+
+        let cal = Calendar.current
+        let now = Date()
+
+        for slot in schedule where slot.isEnabled {
+            guard !lastFiredSlotIds.contains(slot.id) else { continue }
+
+            if let slotDate = cal.date(bySettingHour: slot.hour, minute: slot.minute, second: 0, of: now) {
+                let timeDiff = now.timeIntervalSince(slotDate)
+
+                if timeDiff >= 0 && timeDiff <= 60 {
+                    print("[AppState] Firing reminder for slot \(slot.timeString) - \(slot.label)")
+                    lastFiredSlotIds.insert(slot.id)
+                    currentSlot = slot
+                    fireReminder()
+                    return
+                }
+            }
+        }
     }
 
     func snooze(minutes: Int) {
@@ -206,6 +255,7 @@ final class AppState: ObservableObject {
         if today != lastResetDay {
             logsToday = []
             lastResetDay = today
+            lastFiredSlotIds.removeAll()
             UserDefaults.standard.set(lastResetDay, forKey: Keys.lastResetDay)
         }
     }
